@@ -1,13 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
 
 :root {
-  --font-family:'Signika Negative', sans-serif;
-  --gradient-text: linear-gradient(89.97deg, #f0ebf5 1.84%, #8168b1 102.67%);
-  --gradient-bar: linear-gradient(103.22deg, #f0ebf5 -13.86%, #8168b1 99.55%);
-  --color-bg:  rgb(23, 14, 39);
-  --color-footer : #000;
-  --color-blog: #231f20;
-  --color-text: #fff;;
-  --color-subtext: #ebe9eb;;
+  --font-family: 'Lora', serif;
+  --gradient-text: linear-gradient(90deg, #ff7e5f 0%, #feb47b 100%);
+  --gradient-bar: linear-gradient(120deg, #ff7e5f 0%, #feb47b 100%);
+  --color-bg: #1a1a2e;
+  --color-footer: #1f4068; /* Changed to a more vibrant, deep blue */
+  --color-blog: #16213e;
+  --color-text: #e5e5e5;
+  --color-subtext: #b8b8b8;
+}
+
+/* Footer animation */
+footer {
+  background-color: var(--color-footer);
+  color: var(--color-text);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: var(--gradient-bar);
+  z-index: 0;
+  transition: all 0.5s ease;
+}
+
+footer:hover::before {
+  left: 0;
+}
+
+footer .content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Text animation */
+footer .content p {
+  animation: fadeIn 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+footer:hover .content p {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }

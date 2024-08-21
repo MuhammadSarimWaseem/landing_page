@@ -18,7 +18,7 @@ const Navbar = () => {
     <div className="logo">
       <div className="navbar">
         <div className="navbar-links_logo">
-          <h1>Sarim</h1>
+          <h1>AI-ERA</h1>
         </div>
         <div className="navbar-links">
 
